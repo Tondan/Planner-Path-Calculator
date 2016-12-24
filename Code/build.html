@@ -1,0 +1,38 @@
+<html>
+<head>
+    <title>Build Tree</title>
+
+<script src="./wp-includes/js/addInput.js" language="Javascript" type="text/javascript">
+    </script>
+    </head>
+
+<body>
+
+<form method="POST" action="build.php">
+   <fieldset>
+      <legend>Immetti dati</legend>
+      Split:<input type="text" name="split"><br>
+      Depth:<input type="text" name="depth"><br>
+      
+      
+      <div id="dynamicInput">
+          Attr: <input type="text" name="myInputs[]"> 
+          Valore min:<input type="text" name="myInputsMin[]">
+          Valori max:<input type="text" name="myInputsMax[]">
+          
+          </div>
+     <input type="button" value="Aggiungi nuova riga" onClick="addInput('dynamicInput');">   
+   </fieldset><br>
+   Dai un nome al tuo albero:<input type="text", name="treeName"><br>
+   <input type="submit" value="Genera">
+    
+    
+    
+    
+    
+    
+    
+       
+</form>
+</body>
+</html>
