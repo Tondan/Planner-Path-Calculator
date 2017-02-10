@@ -1,0 +1,21 @@
+Guida per ampps:
+	-andare sul sito,scaricare ed installare il prodotto
+	-successivamente avrete sulla tray bar l'icona di ampps
+	-fare click con il tasto destro sull'icona
+
+A questo punto avremo varie opzioni: in local space(corrisponde alla cartella www di c://programmi/ampps/www) possiamo vedere i progetti sul server, il codice php può essere eseguito solo da qui
+
+facciamo alcune config: tasto destro su ampps
+			configuration->php
+			si aprira il file config di php
+			modificare i valori di memory limit a 200m, post max size 200m, max file upload 200, upload max filesize 200m, max_input_time = 600, max_execution_time=1000
+
+
+configurazioni di mysql (my.cnf)
+			sotto a [mysqld] scrivere 
+			local-infile	= 1
+			sotto a [mysql] scrivere
+			local-infile
+			
+
+ora andare su phpmyadmin e configrare utente(IngSoftw) e password(IngSoftw), ed un db dello stesso nome di quelli impostati nel file db connect.inc(Progetto)

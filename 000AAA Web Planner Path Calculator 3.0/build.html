@@ -1,0 +1,83 @@
+<html>
+<head>
+    <title>Build Tree</title>
+    <link rel="stylesheet" type="text/css" href="mystyle.css">
+<script src="./wp-includes/js/addInput.js" language="Javascript" type="text/javascript">
+    </script>
+<script src="./wp-includes/js/addInputArco.js" language="Javascript" type="text/javascript">
+    </script>
+    
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js">  
+</script>
+<script type="text/javascript">
+
+$(document).ready(function() {
+    $("#form").submit(function() {
+        $(".submitBtn").attr("disabled", true);
+        return true;
+    });
+});
+    
+    </script>
+    </head>
+
+<body>
+<h1>Build Tree</h1>
+<form method="POST" class="form" id="form" action="build.php">
+  
+   <fieldset>
+      <legend>Immetti dati</legend>
+      Split:<input type="number" name="split" min=2 required autofocus><br>
+      Depth:<input type="number" name="depth" min=1 required><br><br>
+      
+     <legend>Immetti dati Nodo</legend> 
+      <div id="dynamicInput">
+          Attr: <input type="text" name="myInputs[]" pattern="[A-Za-z]+[0-9]*+[A-Za-z]*" title="Primo carattere lettera[a-z], simboli non consentiti"> 
+          Valore min:<input type="text" name="myInputsMin[]">
+          Valori max:<input type="text" name="myInputsMax[]">
+          <input type="button" value="+" onClick="addInput('dynamicInput');", id="aggiungi">
+       </div>
+       </fieldset><br>
+        
+   
+   
+   <fieldset>
+   <legend>Immetti dati Arco</legend>
+       
+   <div id="dynamicInputArco">
+          AttrArco: <input type="text" name="myInputsArco[]" pattern="[A-Za-z]+[0-9]*+[A-Za-z]*" title="Primo carattere lettera[a-z], simboli non consentiti"> 
+          Valore min arco:<input type="text" name="myInputsMinArco[]">
+          Valori max arco:<input type="text" name="myInputsMaxArco[]">
+         <input type="button" value="+" onClick="addInputArco('dynamicInputArco');", id="aggiungi"><br>
+         </div>
+       </fieldset><br>
+          
+          
+   Dai un nome al tuo albero:<input type="text", name="treeName" maxlength="20" pattern="[A-Za-z]+[0-9]*+[A-Za-z]*" title="Primo carattere lettera[a-z], simboli non consentiti" required><br><br>
+
+    <input type="submit" value="Genera" class="submitBtn">
+<br><br><br><br><br><br><br><br>
+<!--In questa parte del codice l'utente 
+	inserisce nome, attributi e i loro
+	nomi, i valori minimo e massimo dei
+	valori randomici; inserisce la split
+	e la size dell'albero da creare e 
+	infine clicca il bottone che chiama
+	il php della creazione-->
+    
+    
+ <ul>
+  <li><a class="active" href="build.html">Crea</a></li>
+  <li><a href="delete_inter.php">Cancella</a></li>
+  <li><a href="calcola_inter.php">Calcola</a></li>
+  <li style="float:right"><a href="index.html">Home</a></li>
+</ul>   
+   <!-- queste 6 righe servono per reindirizzare 
+   l'utente dove vuole, se vuole costruire,
+   cancellare o creare alberi--> 
+    
+    
+       
+</form>
+</body>
+</html>
